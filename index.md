@@ -1,3 +1,6 @@
+---
+Title : Solidity Notes
+---
 # Solidity-Notes
 These notes are not prepared by me these are from [tutorial](https://cryptozombies.io/)
 ## contracts
