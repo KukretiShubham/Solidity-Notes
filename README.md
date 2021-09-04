@@ -345,7 +345,7 @@ Storage refers to variables stored permanently on the blockchain. Memory variabl
 Most of the time you don't need to use these keywords because Solidity handles them by default. State variables (variables declared outside of functions) are by default storage and written permanently to the blockchain, while variables declared inside functions are memory and will disappear when the function call ends.
 
 However, there are times when you do need to use these keywords, namely when dealing with structs and arrays within functions:
-
+```solidity
 contract SandwichFactory {
   struct Sandwich {
     string name;
@@ -378,6 +378,7 @@ contract SandwichFactory {
     // ...if you want to copy the changes back into blockchain storage.
   }
 }
+```
 Don't worry if you don't fully understand when to use which one yet — throughout this tutorial we'll tell you when to use `storage` and when to use `memory`, and the Solidity compiler will also give you warnings to let you know when you should be using one of these keywords.
 
 For now, it's enough to understand that there are cases where you'll need to explicitly declare `storage` or `memory`!
