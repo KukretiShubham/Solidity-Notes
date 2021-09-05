@@ -382,3 +382,32 @@ contract SandwichFactory {
 Don't worry if you don't fully understand when to use which one yet — throughout this tutorial we'll tell you when to use `storage` and when to use `memory`, and the Solidity compiler will also give you warnings to let you know when you should be using one of these keywords.
 
 For now, it's enough to understand that there are cases where you'll need to explicitly declare `storage` or `memory`!
+
+## More on Function Visibility
+### Internal and External
+In addition to `public` and `private`, Solidity has two more types of visibility for functions: `internal` and `external`.
+
+`internal` is the same as `private`, except that it's also accessible to contracts that inherit from this contract. (Hey, that sounds like what we want here!).
+
+`external` is similar to `public`, except that these functions can ONLY be called outside the contract — they can't be called by other functions inside that contract. We'll talk about why you might want to use `external` vs `public` later.
+
+For declaring `internal` or `external` functions, the syntax is the same as `private` and `public`:
+```solidity
+contract Sandwich {
+  uint private sandwichesEaten = 0;
+
+  function eat() internal {
+    sandwichesEaten++;
+  }
+}
+
+contract BLT is Sandwich {
+  uint private baconSandwichesEaten = 0;
+
+  function eatWithBacon() public returns (string memory) {
+    baconSandwichesEaten++;
+    // We can call this here because it's internal
+    eat();
+  }
+}
+```
