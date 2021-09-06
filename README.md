@@ -445,3 +445,54 @@ Secondly, we're not defining the function bodies. Instead of curly braces ({ and
 So it kind of looks like a contract skeleton. This is how the compiler knows it's an interface.
 
 By including this interface in our dapp's code our contract knows what the other contract's functions look like, how to call them, and what sort of response to expect.
+**In Solidity you can return more than one value from a function**
+We can interact and use funciton from other smart contract this way, it in a contract as follows:
+```solidity
+contract MyContract {
+  address NumberInterfaceAddress = 0xab38... 
+  // ^ The address of the FavoriteNumber contract on Ethereum
+  NumberInterface numberContract = NumberInterface(NumberInterfaceAddress);
+  // Now `numberContract` is pointing to the other contract
+
+  function someFunction() public {
+    // Now we can call `getNum` from that contract:
+    uint num = numberContract.getNum(msg.sender);
+    // ...and do something with `num` here
+  }
+}
+```
+In this way, your contract can interact with any other contract on the Ethereum blockchain, as long they expose those functions as `public` or `external`.
+
+## Handling Multiple Return Values
+If a function returns multiple things then let's look at how to handle them:
+```solidity
+function multipleReturns() internal returns(uint a, uint b, uint c) {
+  return (1, 2, 3);
+}
+
+function processMultipleReturns() external {
+  uint a;
+  uint b;
+  uint c;
+  // This is how you do multiple assignment:
+  (a, b, c) = multipleReturns();
+}
+
+// Or if we only cared about one of the values:
+function getLastReturnValue() external {
+  uint c;
+  // We can just leave the other fields blank:
+  (,,c) = multipleReturns();
+}
+```
+## If statements
+If statements in Solidity look just like javascript:
+```solidity
+function eatBLT(string memory sandwich) public {
+  // Remember with strings, we have to compare their keccak256 hashes
+  // to check equality
+  if (keccak256(abi.encodePacked(sandwich)) == keccak256(abi.encodePacked("BLT"))) {
+    eat();
+  }
+}
+```
