@@ -521,6 +521,7 @@ For this reason, it often makes sense to have functions that will allow you to u
 ## Ownable contract
 OpenZeppelin's Ownable contract
 Below is the Ownable contract taken from the OpenZeppelin Solidity library. OpenZeppelin is a library of secure and community-vetted smart contracts that you can use in your own DApps. After this lesson, we highly recommend you check out their site to further your learning!
+Documentation to [OpenZepplin](https://docs.openzeppelin.com/contracts/4.x/)
 
 Give the contract below a read-through. You're going to see a few things we haven't learned yet, but don't worry, we'll talk about them afterward.
 ```solidity
