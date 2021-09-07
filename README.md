@@ -1,5 +1,6 @@
 # Solidity-Notes
 **These notes are not prepared by me these are from [tutorial](https://cryptozombies.io/)**
+
 These are for quick reference for hands on practice checkout [tutorial](https://cryptozombies.io/)
 ## contracts
 Solidity's code is encapsulated in contracts. A contract is the fundamental building block of Ethereum applications — all variables and functions belong to a contract, and this will be the starting point of all your projects.
