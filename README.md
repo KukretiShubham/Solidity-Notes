@@ -507,9 +507,9 @@ The initial code you deploy to a contract is there to stay, permanently, on the 
 
 But this is also a feature of smart contracts. The code is law. If you read the code of a smart contract and verify it, you can be sure that every time you call a function it's going to do exactly what the code says it will do. No one can later change that function and give you unexpected results.
 
-External dependencies
-In Lesson 2, we hard-coded the CryptoKitties contract address into our DApp. But what would happen if the CryptoKitties contract had a bug and someone destroyed all the kitties?
+### External dependencies
+we hard-code contract address into our DApp. But what would happen if a contract had a bug?
 
-It's unlikely, but if this did happen it would render our DApp completely useless — our DApp would point to a hardcoded address that no longer returned any kitties. Our zombies would be unable to feed on kitties, and we'd be unable to modify our contract to fix it.
+It's unlikely, but if this did happen it would render our DApp completely useless — our DApp would point to a hardcoded address that no longer returned and we'd be unable to modify our contract to fix it.
 
 For this reason, it often makes sense to have functions that will allow you to update key portions of the DApp.
