@@ -612,4 +612,4 @@ So the Ownable contract basically does the following:
 2. It adds an onlyOwner modifier, which can restrict access to certain functions to only the owner
 3. It allows you to transfer the contract to a new owner
 
-onlyOwner is such a common requirement for contracts that most Solidity DApps start with a copy/paste of this Ownable contract, and then their first contract inherits from it
+**onlyOwner is such a common requirement for contracts that most Solidity DApps start with a copy/paste of this Ownable contract, and then their first contract inherits from it**
