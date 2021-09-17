@@ -2,6 +2,8 @@
 **These notes are not prepared by me these are from [tutorial](https://cryptozombies.io/)**
 
 These are for quick reference. For hands on practice, checkout [tutorial](https://cryptozombies.io/)
+
+Solidity official [Documentation](https://docs.soliditylang.org/en/v0.8.7/introduction-to-smart-contracts.html)
 <br></br>
 As the file is large, use readme index/navigation bar to navigate through the page.
 ![image](https://user-images.githubusercontent.com/57281769/132308708-585f3505-e542-4998-934c-438e6ccd20b8.png)
