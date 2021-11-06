@@ -708,3 +708,9 @@ In the case of `onlyOwner`, adding this modifier to a function makes it so only 
 > So it's important to remember that just because a DApp is on Ethereum does not automatically mean it's decentralized — you have to actually read the full source code to make sure it's free of special controls by the owner that you need to potentially worry about. There's a careful balance as a developer between maintaining control over a DApp such that you can fix potential bugs, and building an owner-less platform that your users can trust to secure their data.
 
 ## Gas
+In Solidity, your users have to pay every time they execute a function on your DApp using a currency called `gas`. Users buy gas with Ether (the currency on Ethereum), so your users have to spend ETH in order to execute functions on your DApp.
+
+How much gas is required to execute a function depends on how complex that function's logic is. Each individual operation has a `gas cost` based roughly on how much computing resources will be required to perform that operation (e.g. writing to storage is much more expensive than adding two integers). The total `gas cost` of your function is the sum of the gas costs of all its individual operations.
+
+Because running functions costs real money for your users, code optimization is much more important in Ethereum than in other programming languages.
+
