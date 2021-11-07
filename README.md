@@ -771,4 +771,23 @@ function fiveMinutesHavePassed() public view returns (bool) {
   return (now >= (lastUpdated + 5 minutes));
 }
 ```
+## More on Function Modifiers
+### Function modifiers with arguments
+Previously we looked at the simple example of onlyOwner. But function modifiers can also take arguments. For example:
+```solidity
+// A mapping to store a user's age:
+mapping (uint => uint) public age;
 
+// Modifier that requires this user to be older than a certain age:
+modifier olderThan(uint _age, uint _userId) {
+  require(age[_userId] >= _age);
+  _;
+}
+
+// Must be older than 16 to drive a car (in the US, at least).
+// We can call the `olderThan` modifier with arguments like so:
+function driveCar(uint _userId) public olderThan(16, _userId) {
+  // Some function logic
+}
+```
+You can see here that the `olderThan` modifier takes arguments just like a function does. And that the `driveCar` function passes its arguments to the modifier.
