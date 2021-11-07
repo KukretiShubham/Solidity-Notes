@@ -391,6 +391,10 @@ Don't worry if you don't fully understand when to use which one yet — througho
 
 For now, it's enough to understand that there are cases where you'll need to explicitly declare `storage` or `memory`!
 
+> `calldata` is somehow similar to memory, but it's only available to `external` functions.
+
+
+
 ## More on Function Visibility
 ### Internal and External
 In addition to `public` and `private`, Solidity has two more types of visibility for functions: `internal` and `external`.
