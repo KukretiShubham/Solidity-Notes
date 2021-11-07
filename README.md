@@ -747,3 +747,28 @@ MiniMe mini = MiniMe(10, 20, 30);
 For this reason, inside a struct you'll want to use the smallest integer sub-types you can get away with.
 
 You'll also want to cluster identical data types together (i.e. put them next to each other in the struct) so that Solidity can minimize the required storage space. For example, a struct with fields uint c; uint32 a; uint32 b; will cost less gas than a struct with fields uint32 a; uint c; uint32 b; because the uint32 fields are clustered together.
+
+## Time Units
+Solidity provides some native units for dealing with time.
+
+The variable `now` will return the current unix timestamp of the latest block (the number of seconds that have passed since January 1st 1970). The unix time as I write this is `1515527488`
+> Note: Unix time is traditionally stored in a 32-bit number. This will lead to the "Year 2038" problem, when 32-bit unix timestamps will overflow and break a lot of legacy systems. So if we wanted our DApp to keep running 20 years from now, we could use a 64-bit number instead — but our users would have to spend more gas to use our DApp in the meantime. Design decisions!
+
+Solidity also contains the time units seconds, minutes, hours, days, weeks and years. These will convert to a uint of the number of seconds in that length of time. So 1 minutes is 60, 1 hours is 3600 (60 seconds x 60 minutes), 1 days is 86400 (24 hours x 60 minutes x 60 seconds), etc.
+
+Here's an example of how these time units can be useful:
+```solidity
+uint lastUpdated;
+
+// Set `lastUpdated` to `now`
+function updateTimestamp() public {
+  lastUpdated = now;
+}
+
+// Will return `true` if 5 minutes have passed since `updateTimestamp` was 
+// called, `false` if 5 minutes have not passed
+function fiveMinutesHavePassed() public view returns (bool) {
+  return (now >= (lastUpdated + 5 minutes));
+}
+```
+
