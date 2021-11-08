@@ -1,5 +1,5 @@
 # Solidity-Notes
-**These notes are not prepared by me these are from [tutorial](https://cryptozombies.io/)**
+**I took these notes from cryptozombie [tutorial](https://cryptozombies.io/)**
 
 These are for quick reference. For hands on practice, checkout [tutorial](https://cryptozombies.io/)
 
