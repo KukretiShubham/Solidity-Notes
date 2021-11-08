@@ -1,7 +1,6 @@
 # Solidity-Notes
-**I took these notes from cryptozombie [tutorial](https://cryptozombies.io/)**
 
-These are for quick reference. For hands on practice, checkout [tutorial](https://cryptozombies.io/)
+These are for quick reference. For hands on practice, checkout cryptozombies [tutorial](https://cryptozombies.io/)
 
 Solidity official [Documentation](https://docs.soliditylang.org/en/v0.8.9/introduction-to-smart-contracts.html)
 <br></br>
