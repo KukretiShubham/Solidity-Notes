@@ -831,3 +831,32 @@ function getArray() external pure returns(uint[] memory) {
 }
 ```
 This is a trivial example just to show you the syntax, we can combine this with `for` loops for real use-cases.
+
+> Note: memory arrays must be created with a length argument (in this example, 3). They currently cannot be resized like storage arrays can with `array.push()`, although this may be changed in a future version of Solidity.
+
+## For Loops
+Sometimes we want to use a for loop to build the contents of an array in a function rather than simply saving that array to storage.
+The syntax of for loops in Solidity is similar to JavaScript.
+
+Let's look at an example where we want to make an array of even numbers:
+
+```solidity
+function getEvens() pure external returns(uint[] memory) {
+  uint[] memory evens = new uint[](5);
+  // Keep track of the index in the new array:
+  uint counter = 0;
+  // Iterate 1 through 10 with a for loop:
+  for (uint i = 1; i <= 10; i++) {
+    // If `i` is even...
+    if (i % 2 == 0) {
+      // Add it to our array
+      evens[counter] = i;
+      // Increment counter to the next empty index in `evens`:
+      counter++;
+    }
+  }
+  return evens;
+}
+```
+This function will return an array with the contents `[2, 4, 6, 8, 10]`.
+
